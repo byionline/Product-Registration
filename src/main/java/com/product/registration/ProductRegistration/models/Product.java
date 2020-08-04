@@ -1,10 +1,17 @@
 package com.product.registration.ProductRegistration.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.sql.Date;
-
+@Entity
 public class Product {
     // Product Attributes
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private String serialNumber;
     private String itemName;
     private BigDecimal purchasePrice;
@@ -13,6 +20,14 @@ public class Product {
     private String customerEmail;
     private String customerPhone;
     private String customerAddress;
+    
+    public Long getId() {
+        return id;
+    }
+    
+    public void setId(Long id) {
+        this.id = id;
+    }
     
     public String getSerialNumber() {
         return serialNumber;
