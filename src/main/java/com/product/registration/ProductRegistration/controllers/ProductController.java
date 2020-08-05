@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/products")
@@ -26,8 +26,8 @@ public class ProductController {
     }
     // Get Product by id
     @GetMapping("/{id}")
-    public Product get(@PathVariable("id") long id){
+    public Optional<Product> get(@PathVariable("id") Long id){
 //        return new Product();
-        return productRepository.getOne(id);
+        return productRepository.findById(id);
     }
 }
