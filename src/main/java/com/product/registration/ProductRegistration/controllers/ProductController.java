@@ -3,10 +3,8 @@ package com.product.registration.ProductRegistration.controllers;
 import com.product.registration.ProductRegistration.models.Product;
 import com.product.registration.ProductRegistration.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -29,5 +27,13 @@ public class ProductController {
     public Optional<Product> get(@PathVariable("id") Long id){
 //        return new Product();
         return productRepository.findById(id);
+    }
+    
+    // Create Product
+    @PostMapping
+    @ResponseStatus(HttpStatus.OK)
+    public void create(@RequestBody Product product){
+        productRepository.save(product);
+        
     }
 }
