@@ -5,6 +5,10 @@ Product Registration Application api built with Spring Boot.
 2. Get individual product
 3. Create product
 
+## Watch the video of running application
+
+[![Product Registration](https://img.youtube.com/vi/lfGLBNpBX5o/0.jpg)](https://youtu.be/lfGLBNpBX5o"Product Registration")
+
 ## **Create API Screen:**
    ![Create Api request](post_request.jpg "Create Api request")
    
